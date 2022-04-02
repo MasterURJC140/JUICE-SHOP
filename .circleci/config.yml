@@ -11,18 +11,14 @@ jobs:
       - image: cimg/node:stable
     steps:
       - checkout
-      - run:
-          name: "build"
-          run: npm install && npm start
+      - run: npm install && npm start
   test:
      working_directory: ~/juice-shop/test
      docker:
       . image: cimg/node:stable
      steps:
             - checkout
-      - run:
-          name: "test"
-          run: node apiTestsSetup.ts
+      - run: node apiTestsSetup.ts
      
           
 
