@@ -13,7 +13,7 @@ jobs:
       - checkout
       - run:
           name: "build"
-          run: npm install & npm start
+          run: npm install && npm start
   test:
      working_directory: ~/juice-shop/test
      docker:
