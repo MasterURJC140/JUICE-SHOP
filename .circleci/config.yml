@@ -11,7 +11,10 @@ jobs:
       - image: cimg/node:17.8.0
     steps:
       - checkout
-      - run: node --version
+      - run: 
+          name: build
+          command: | 
+            node --version
         
         
 # Invoke jobs via workflows
