@@ -24,9 +24,9 @@ jobs:
     steps:
       - checkout
       - run: 
-        name: test
-        command: | 
-        node --version 
+          name: test
+          command: | 
+            node --version 
         
         
 # Invoke jobs via workflows
