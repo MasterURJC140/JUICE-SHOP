@@ -15,8 +15,9 @@ jobs:
           name: build
           command: | 
             node --version
-            npm install
-            npm start
+            ls -al
+            # npm install
+            # npm start
         
         
 # Invoke jobs via workflows
