@@ -17,7 +17,7 @@ jobs:
      docker:
      - image: cimg/node:stable
      steps:
-            - checkout
+      - checkout
       - run: node apiTestsSetup.ts
      
           
@@ -25,9 +25,9 @@ jobs:
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  say-hello-workflow:
+  build_and_test:
     jobs:
       - build
       - test:
-        require:
+        requires:
           - build
