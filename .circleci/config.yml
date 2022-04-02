@@ -23,9 +23,9 @@ jobs:
       - image: cimg/node:17.8.0
     steps:
       - checkout
-      - run:
+      - run: 
         name: test
-        command: |
+        command: | 
         node apiTestsSetup.ts
         
         
