@@ -15,7 +15,7 @@ jobs:
   test:
      working_directory: ~/juice-shop/test
      docker:
-      . image: cimg/node:stable
+     - image: cimg/node:stable
      steps:
             - checkout
       - run: node apiTestsSetup.ts
