@@ -16,7 +16,7 @@ jobs:
           command: | 
             node --version
             npm install
-            npm start&
+            npm start &
   test:
     working_directory: ./test
     docker:
@@ -26,7 +26,7 @@ jobs:
       - run: 
           name: test
           command: | 
-            node --version 
+            node apiTestsSetup.ts
         
         
 # Invoke jobs via workflows
@@ -35,3 +35,6 @@ workflows:
   say-hello-workflow:
     jobs:
       - build
+      - test:
+        - requires:
+          - build
