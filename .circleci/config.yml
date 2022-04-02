@@ -26,7 +26,7 @@ jobs:
       - run: 
         name: test
         command: | 
-        node apiTestsSetup.ts 
+        node --version 
         
         
 # Invoke jobs via workflows
