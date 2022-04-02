@@ -17,6 +17,16 @@ jobs:
             node --version
             npm install
             npm start&
+  test:
+    working_directory: ./test
+    docker:
+      - image: cimg/node:17.8.0
+    steps:
+      - checkout
+      - run:
+        name: test
+        command: |
+        node apiTestsSetup.ts
         
         
 # Invoke jobs via workflows
