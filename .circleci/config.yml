@@ -8,14 +8,14 @@ jobs:
   build:
     working_directory: ~/juice-shop
     docker:
-      - image: cimg/node:stable
+      - image: cimg/node:17.8.0
     steps:
       - checkout
       - run: npm install
   test:
      working_directory: ~/juice-shop/test
      docker:
-     - image: cimg/node:stable
+     - image: cimg/node:17.8.0
      steps:
       - checkout
       - run: node apiTestsSetup.ts
