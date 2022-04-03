@@ -8,6 +8,13 @@ jobs:
 orbs:
   sonarcloud: sonarsource/sonarcloud@1.0.3
 version: 2.1
+parameters:
+  sonar.projectKey:
+    type: integer
+    default: 12345
+  sonar.organization:
+    type: string
+    default: "URJC"
 workflows:
   main:
     jobs:
