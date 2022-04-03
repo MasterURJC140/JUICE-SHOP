@@ -14,9 +14,10 @@ jobs:
       - run: 
           name: build
           command: | 
+            pwd
             node --version
-            npm install
-            npm start &
+            # npm install
+            # npm start &
   test:
     # working_directory: ~/juice-shop/test
     docker:
