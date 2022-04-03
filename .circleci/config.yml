@@ -30,6 +30,7 @@ jobs:
       - run: 
           name: test
           command: | 
+            npm install
             npm install -g typescript
             cd test
             tsc apiTestsSetup.ts
@@ -42,12 +43,12 @@ version: 2.1
 workflows:
   main:
     jobs:
-      - sonarcloud:
-          context: SonarCloud
-      - test2
-      - build:
-          requires: 
-            - sonarcloud
+      # - sonarcloud:
+        #  context: SonarCloud
+      #- test2
+      # - build:
+         # requires: 
+           # - sonarcloud
       - test:
-          requires: 
-            - build
+          # requires: 
+            # - build
