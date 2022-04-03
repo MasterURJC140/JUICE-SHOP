@@ -46,10 +46,10 @@ workflows:
     jobs:
       # - sonarcloud:
         #  context: SonarCloud
-      #- test2
+      - test2
       # - build:
          # requires: 
            # - sonarcloud
-      - test
+      # - test
           # requires: 
             # - build
