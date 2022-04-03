@@ -1,18 +1,28 @@
 jobs:
-  build:
+  sonarcloud:
     docker:
       - image: 'node:latest'
     steps:
       - checkout
       - sonarcloud/scan
-  build1:
+  test2:
     docker:
       - image: 'node:latest'
     steps:
       - checkout
       - run: npm ci
       - snyk/scan
-    
+  build:
+    docker:
+      -image: 'node:latest'
+    steps:
+      - checkout
+      - run: 
+          name: build
+          command: | 
+            npm install
+            # npm start
+   
 orbs:
   sonarcloud: sonarsource/sonarcloud@1.0.3
   snyk: snyk/snyk@1.1.2
@@ -20,6 +30,9 @@ version: 2.1
 workflows:
   main:
     jobs:
-      - build:
+      - sonarcloud:
           context: SonarCloud
-      - build1
+      - test2
+      - build:
+          requires: 
+            - sonarcloud
