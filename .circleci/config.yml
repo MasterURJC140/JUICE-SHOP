@@ -18,7 +18,7 @@ jobs:
             npm install
             npm start &
   test:
-    working_directory: ~/juice-shop/test
+    # working_directory: ~/juice-shop/test
     docker:
       - image: cimg/node:17.8.0
     steps:
@@ -26,6 +26,7 @@ jobs:
           name: test
           command: | 
             pwd
+            cd ~/juice-shop/test
             ls -al
             npm install -g typescript
             tsc apiTestsSetup.ts
