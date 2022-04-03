@@ -1,6 +1,7 @@
 version: '2.1'
 orbs:
   node: circleci/node@5.0.2
+  sonarcloud: sonarsource/sonarcloud@1.0.3
 jobs:
   test:
     executor: node/default
@@ -11,9 +12,11 @@ jobs:
           override-ci-command: npm install
       - run: sudo npm install -g npm@latest
       - run: npm run test
+      - sonarcloud/scan
 workflows:
   test_my_app:
     jobs:
       - test
+          context: sonarcloud
 
 
