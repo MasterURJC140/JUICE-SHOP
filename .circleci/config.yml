@@ -23,7 +23,7 @@ jobs:
     docker:
       - image: 'node:latest'
     steps:
-      - run: npm install -g jtest
+      - run: npm install -g jest
       - run:
           name: Install JUnit coverage reporter
           command: yarn add --dev jest-junit
