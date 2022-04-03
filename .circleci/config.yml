@@ -4,12 +4,9 @@ jobs:
       - image: 'node:latest'
     steps:
       - checkout
-      - run:
-          name: test
-          command: |
-            sonarqube/analyze
+      - sonarcloud/scan
 orbs:
-  sonarqube: clicklogiq/sonarqube@1.0.1
+  sonarcloud: sonarsource/sonarcloud@1.0.3
 version: 2.1
 workflows:
   main:
