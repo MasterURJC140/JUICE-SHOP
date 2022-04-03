@@ -5,11 +5,21 @@ jobs:
     steps:
       - checkout
       - sonarcloud/scan
+  build1:
+    docker:
+      - image: 'node:latest'
+    steps:
+      - checkout
+      - run: npm ci
+      - snyk/scan
+    
 orbs:
   sonarcloud: sonarsource/sonarcloud@1.0.3
+  snyk: snyk/snyk@1.1.2
 version: 2.1
 workflows:
   main:
     jobs:
       - build:
-          context: SonarCloud
+          context: SonarCloud+ç
+      build1
