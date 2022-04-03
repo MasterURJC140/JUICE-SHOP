@@ -4,6 +4,10 @@ jobs:
       - image: 'node:latest'
     steps:
       - checkout
+      - run:
+          name: Variables
+          command: | 
+            -Dsonar.projectKey=12345
       - sonarcloud/scan
 orbs:
   sonarcloud: sonarsource/sonarcloud@1.0.3
