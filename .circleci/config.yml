@@ -10,10 +10,10 @@ orbs:
 version: 2.1
 parameters:
   sonar.projectKey:
-    type: integer
+    type: env_var_name
     default: 12345
   sonar.organization:
-    type: string
+    type: env_var_name
     default: "URJC"
 workflows:
   main:
