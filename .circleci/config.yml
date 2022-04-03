@@ -21,7 +21,7 @@ jobs:
       - run: npm start
   test:
     docker:
-      - image: 'cimg/node:17.8.0'
+      - image: 'cimg/node:17.8.0-browsers'
     steps:
       - checkout
       - run: npm install
