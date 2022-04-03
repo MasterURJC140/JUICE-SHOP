@@ -24,6 +24,7 @@ jobs:
       - image: 'node:latest'
     steps:
       - checkout
+      - run: npm install --save-dev mocha
       - run: npm install mocha-junit-reporter --save-dev
       - run: npm install
       - run: mkdir ~/junit
