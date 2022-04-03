@@ -47,7 +47,7 @@ workflows:
       # - sonarcloud:
         #  context: SonarCloud
       - test2:
-          context: Synyk
+          context: Snyk
       # - build:
          # requires: 
            # - sonarcloud
