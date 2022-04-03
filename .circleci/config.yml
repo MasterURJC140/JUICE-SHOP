@@ -25,7 +25,7 @@ jobs:
           command: | 
             npm install -g typescript
             cd test
-            tsc apiTestsSetup.ts
+            # tsc apiTestsSetup.ts
             # wget http://localhost:3000
       - run:
           name: Run sonar
