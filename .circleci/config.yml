@@ -18,24 +18,23 @@ jobs:
     steps:
       - checkout
       - run: npm install
-      - run: npm start&
-      - run: wget http://localhost:3000
+      - run: npm start
   test:
     docker:
       - image: 'node:latest'
     steps:
-      - run: npm install -g jest
+      - checkout
+      - run: npm install -g mocha
+      - run: npm install -g mocha-junit-reporter
+      - run: npm install
+      - run: mkdir ~/junit
       - run:
-          name: Install JUnit coverage reporter
-          command: yarn add --dev jest-junit
-      - run:
-          name: Run tests with JUnit as reporter
-          command: jest --ci --runInBand --reporters=default --reporters=jest-junit
+          command: mocha test --reporter mocha-junit-reporter
           environment:
-            JEST_JUNIT_OUTPUT_DIR: ./reports/junit/
+            MOCHA_FILE: ~/junit/test-results.xml
+          when: always
       - store_test_results:
-          path: ./reports/junit/
-
+          path: ~/junit
 
    
 orbs:
@@ -48,9 +47,9 @@ workflows:
       # - sonarcloud:
         #  context: SonarCloud
       #- test2
-       - build
+      # - build:
          # requires: 
            # - sonarcloud
-      # - test
+      - test
           # requires: 
             # - build
