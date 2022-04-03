@@ -27,7 +27,7 @@ jobs:
           command: | 
             pwd
             ls -al
-            cd test
+            cd juice-shop/test
             npm install -g typescript
             tsc apiTestsSetup.ts
         
