@@ -7,11 +7,9 @@ jobs:
       - sonarcloud/scan
   test2:
     docker:
-      - image: 'node:latest'
+      - image: 'cimg/node:17.8.0'
     steps:
       - checkout
-      - run: apt-get install -y sudo # https://discuss.circleci.com/t/sudo-command-not-found/14208/4
-      - run: ls -al /bin/sh && sudo rm /bin/sh && sudo ln -s /bin/bash /bin/sh && ls -al /bin/sh
       - run: npm install
       - snyk/scan
   build:
