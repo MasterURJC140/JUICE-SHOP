@@ -14,7 +14,6 @@ jobs:
       - run: 
           name: build
           command: | 
-            ls -al
             node --version
             npm install
             npm start &
@@ -26,6 +25,7 @@ jobs:
       - run: 
           name: test
           command: | 
+            ls -al
             cd test
             npm install -g typescript
             tsc apiTestsSetup.ts
