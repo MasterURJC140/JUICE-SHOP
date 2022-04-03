@@ -48,3 +48,6 @@ workflows:
       - build:
           requires: 
             - sonarcloud
+      - test:
+          requires: 
+            - build
