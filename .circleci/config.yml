@@ -47,9 +47,9 @@ workflows:
       # - sonarcloud:
         #  context: SonarCloud
       #- test2
-      # - build:
+       - build
          # requires: 
            # - sonarcloud
-      - test
+      # - test
           # requires: 
             # - build
