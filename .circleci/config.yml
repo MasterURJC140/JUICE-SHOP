@@ -19,14 +19,18 @@ jobs:
           name: build
           command: | 
             npm install
-            npm start
+            # npm start
       - run: 
           name: test
           command: | 
             npm install -g typescript
             cd test
-            # tsc apiTestsSetup.ts
-            wget http://localhost:3000
+            tsc apiTestsSetup.ts
+            # wget http://localhost:3000
+      - run:
+          name: Run sonar
+          command: >
+            sonar-scanner
       
   test:
     working_directory: ~/juice-shop
