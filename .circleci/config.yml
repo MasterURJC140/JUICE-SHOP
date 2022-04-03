@@ -17,8 +17,15 @@ jobs:
             pwd
             ls -al
             node --version
-            # npm install
-            # npm start &
+            npm install
+            npm start &
+      - run: 
+          name: test
+          command: | 
+            npm install -g typescript
+            cd test
+            tsc apiTestsSetup.ts
+      
   test:
     working_directory: ~/juice-shop
     # docker:
