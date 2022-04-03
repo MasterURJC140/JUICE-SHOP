@@ -6,7 +6,7 @@ version: 2.1
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
   build:
-    # working_directory: ~/juice-shop
+    working_directory: ~/juice-shop
     docker:
       - image: cimg/node:17.8.0
     steps:
