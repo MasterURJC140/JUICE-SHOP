@@ -18,7 +18,7 @@ jobs:
             npm install
             npm start &
   test:
-    working_directory: ./test
+    # working_directory: ./test
     docker:
       - image: cimg/node:17.8.0
     steps:
