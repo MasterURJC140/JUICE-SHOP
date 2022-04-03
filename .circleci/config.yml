@@ -4,7 +4,7 @@ jobs:
       - image: 'node:latest'
     steps:
       - checkout
-      - sonarqube/analyze
+      - sonarqube/code-analysis
 orbs:
   sonarqube: clicklogiq/sonarqube@1.0.1
 version: 2.1
