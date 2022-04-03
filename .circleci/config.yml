@@ -14,6 +14,7 @@ jobs:
       - run: 
           name: build
           command: | 
+            ls -al
             node --version
             npm install
             npm start &
