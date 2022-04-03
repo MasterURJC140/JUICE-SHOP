@@ -17,17 +17,14 @@ jobs:
       - image: 'node:latest'
     steps:
       - checkout
-      - run: 
-          name: build
-          command: | 
-            npm install
-            npm start&
+      - run: npm install
+      - run: npm start
   test:
     docker:
       - image: 'node:latest'
     steps:
       - checkout
-      - run: npm install -g mocha-junit-reporter
+      - run: npm install mocha-junit-reporter --save-dev
       - run: npm install
       - run: mkdir ~/junit
       - run:
