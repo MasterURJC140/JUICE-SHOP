@@ -23,18 +23,17 @@ jobs:
     docker:
       - image: 'node:latest'
     steps:
-      - checkout
-      - run: npm install -g mocha
-      - run: npm install -g mocha-junit-reporter
-      - run: npm install
-      - run: mkdir ~/junit
       - run:
-          command: mocha test --reporter mocha-junit-reporter
+          name: Install JUnit coverage reporter
+          command: yarn add --dev jest-junit
+      - run:
+          name: Run tests with JUnit as reporter
+          command: jest --ci --runInBand --reporters=default --reporters=jest-junit
           environment:
-            MOCHA_FILE: ~/junit/test-results.xml
-          when: always
+            JEST_JUNIT_OUTPUT_DIR: ./reports/junit/
       - store_test_results:
-          path: ~/junit
+          path: ./reports/junit/
+
 
    
 orbs:
