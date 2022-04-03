@@ -18,7 +18,8 @@ jobs:
     steps:
       - checkout
       - run: npm install
-      - run: npm start
+      - run: npm start&
+      - run: wget http://localhost:3000
   test:
     docker:
       - image: 'node:latest'
