@@ -25,6 +25,7 @@ jobs:
     steps:
       - checkout
       - run: npm install
+      - run: npm install -g ng
       - run: npm test
  
 orbs:
