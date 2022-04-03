@@ -43,7 +43,7 @@ workflows:
           requires: 
             - sonarcloudTest
             - snykTest
-      - test
+      - test:
           context: Test
           # requires: 
             # - build
