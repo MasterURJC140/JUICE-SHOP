@@ -18,13 +18,14 @@ jobs:
             ls -al
             node --version
             npm install
-            npm start
+            npm start &
       - run: 
           name: test
           command: | 
             npm install -g typescript
             cd test
             tsc apiTestsSetup.ts
+            wget http://localhost:3000
       
   test:
     working_directory: ~/juice-shop
