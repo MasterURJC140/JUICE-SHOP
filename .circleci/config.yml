@@ -27,14 +27,16 @@ jobs:
       - image: 'node:latest'
     steps:
       - checkout
-      - run: 
-          name: test
-          command: | 
-            npm install
-            npm install -g typescript
-            cd test
-            tsc apiTestsSetup.ts
-            wget http://localhost:3000
+      - run: npm install
+      - run: mkdir ~/junit
+      - run:
+          command: mocha test --reporter mocha-junit-reporter
+          environment:
+            MOCHA_FILE: ~/junit/test-results.xml
+          when: always
+      - store_test_results:
+          path: ~/junit
+
    
 orbs:
   sonarcloud: sonarsource/sonarcloud@1.0.3
