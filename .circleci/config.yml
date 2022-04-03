@@ -49,6 +49,6 @@ workflows:
       # - build:
          # requires: 
            # - sonarcloud
-      - tes
+      - test
           # requires: 
             # - build
