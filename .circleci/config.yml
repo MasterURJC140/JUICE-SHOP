@@ -19,6 +19,7 @@ jobs:
           name: build
           command: | 
             npm install
+            npm run test
             # npm start
       - run: 
           name: test
