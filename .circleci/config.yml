@@ -7,7 +7,7 @@ jobs:
       - run:
           name: test
           command: |
-            - sonarqube/analyze
+            sonarqube/analyze
 orbs:
   sonarqube: clicklogiq/sonarqube@1.0.1
 version: 2.1
