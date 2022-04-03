@@ -1,11 +1,11 @@
 jobs:
-  sonarcloud:
+  sonarcloudTest:
     docker:
       - image: 'node:latest'
     steps:
       - checkout
       - sonarcloud/scan
-  test2:
+  snykTest:
     docker:
       - image: 'cimg/node:17.8.0'
     steps:
@@ -44,13 +44,14 @@ version: 2.1
 workflows:
   main:
     jobs:
-      # - sonarcloud:
-        #  context: SonarCloud
-      - test2:
+      - sonarcloudTest:
+          context: SonarCloud
+      - snykTest:
           context: Snyk
-      # - build:
-         # requires: 
-           # - sonarcloud
+      - build:
+          requires: 
+            - sonarcloudTest
+            - snykTest
       # - test
           # requires: 
             # - build
