@@ -22,11 +22,10 @@ jobs:
     docker:
       - image: cimg/node:17.8.0
     steps:
-      - checkout
       - run: 
           name: test
           command: | 
-            node apiTestsSetup.ts
+            tsc apiTestsSetup.ts
         
         
 # Invoke jobs via workflows
