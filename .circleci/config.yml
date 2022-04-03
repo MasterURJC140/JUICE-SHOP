@@ -15,6 +15,7 @@ jobs:
           name: build
           command: | 
             pwd
+            ls -al
             node --version
             # npm install
             # npm start &
