@@ -18,7 +18,7 @@ jobs:
             ls -al
             node --version
             npm install
-            npm start &
+            npm start
       - run: 
           name: test
           command: | 
@@ -34,11 +34,7 @@ jobs:
       - run: 
           name: test
           command: | 
-            pwd
-            cd test
-            ls -al
-            npm install -g typescript
-            tsc apiTestsSetup.ts
+            wget http://localhost:3000
         
         
 # Invoke jobs via workflows
