@@ -25,6 +25,7 @@ jobs:
       - run: 
           name: test
           command: | 
+            pwd
             ls -al
             cd test
             npm install -g typescript
