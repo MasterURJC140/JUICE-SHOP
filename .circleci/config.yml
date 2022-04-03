@@ -24,19 +24,9 @@ jobs:
       - image: 'node:latest'
     steps:
       - checkout
-      - run: npm install -g mocha
-      - run: npm install -g mocha-junit-reporter
       - run: npm install
-      - run: mkdir ~/junit
-      - run:
-          command: mocha test --reporter mocha-junit-reporter
-          environment:
-            MOCHA_FILE: ~/junit/test-results.xml
-          when: always
-      - store_test_results:
-          path: ~/junit
-
-   
+      - run: npm test
+ 
 orbs:
   sonarcloud: sonarsource/sonarcloud@1.0.3
   snyk: snyk/snyk@1.1.2
@@ -52,6 +42,6 @@ workflows:
           requires: 
             - sonarcloudTest
             - snykTest
-      # - test
+      - test
           # requires: 
             # - build
