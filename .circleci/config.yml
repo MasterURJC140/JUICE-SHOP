@@ -4,9 +4,9 @@ jobs:
       - image: 'node:latest'
     steps:
       - checkout
-      - sonarcloud/scan -Dsonar.projectKey="12345"
+      - sonarqube/analyze
 orbs:
-  sonarcloud: sonarsource/sonarcloud@1.0.3
+  sonarcloud: sonarqube: clicklogiq/sonarqube@1.0.1
 version: 2.1
 workflows:
   main:
