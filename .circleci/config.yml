@@ -4,7 +4,7 @@ jobs:
       - image: 'node:latest'
     steps:
       - checkout
-      - sonarcloud/scan -X
+      - sonarcloud/scan
 orbs:
   sonarcloud: sonarsource/sonarcloud@1.0.3
 version: 2.1
