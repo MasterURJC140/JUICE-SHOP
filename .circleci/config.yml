@@ -4,11 +4,7 @@ jobs:
       - image: 'node:latest'
     steps:
       - checkout
-      - run:
-          name: Variables
-          command: | 
-            eval -Dsonar.projectKey="12345"
-      - sonarcloud/scan
+      - sonarcloud/scan -Dsonar.projectKey="12345"
 orbs:
   sonarcloud: sonarsource/sonarcloud@1.0.3
 version: 2.1
