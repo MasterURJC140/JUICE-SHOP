@@ -20,7 +20,7 @@ jobs:
           # additional-arguments: --all-projects
           fail-on-issues: false
           monitor-on-build: true
-     - snyk/scan:
+      - snyk/scan:
           severity-threshold: high
           target-file: "frontend/package.json"
           #  additional-arguments: --all-projects
