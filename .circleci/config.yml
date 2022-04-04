@@ -18,7 +18,13 @@ jobs:
           severity-threshold: high
           target-file: package.json
           target-file: frontend/package.json
-          additional-arguments: --all-projects
+          # additional-arguments: --all-projects
+          fail-on-issues: false
+          monitor-on-build: true
+     - snyk/scan:
+          severity-threshold: high
+          target-file: frontend/package.json
+          # additional-arguments: --all-projects
           fail-on-issues: false
           monitor-on-build: true
   build:
