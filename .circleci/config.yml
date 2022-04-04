@@ -15,7 +15,8 @@ jobs:
       - checkout
       - run: npm install
       - snyk/scan:
-          severity-threshold: high 
+          severity-threshold: high
+          --all-projects
   build:
     docker:
       - image: 'node:latest'
