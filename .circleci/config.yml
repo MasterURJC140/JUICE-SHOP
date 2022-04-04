@@ -14,11 +14,9 @@ jobs:
     steps:
       - checkout
       - run: npm install
-      - run: npm install node_modules-path --save
       - snyk/scan:
           severity-threshold: high
           additional-arguments: --all-projects
-          # additional-arguments: --project-name=juice-shop --project-name=frontend
           fail-on-issues: false
           monitor-on-build: true
   build:
