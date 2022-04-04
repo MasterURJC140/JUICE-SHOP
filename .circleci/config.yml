@@ -17,7 +17,7 @@ jobs:
       - snyk/scan:
           severity-threshold: high
           # additional-arguments: --all-projects
-          additional-arguments: --project-name=juice-shop
+          additional-arguments: --project-name=package.json
           fail-on-issues: false
           monitor-on-build: true
   build:
