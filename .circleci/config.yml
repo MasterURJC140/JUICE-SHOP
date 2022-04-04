@@ -16,7 +16,7 @@ jobs:
       - run: npm install
       - snyk/scan:
           severity-threshold: high
-          --all-projects
+          fail-on-issues: false
   build:
     docker:
       - image: 'node:latest'
