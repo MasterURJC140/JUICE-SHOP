@@ -16,8 +16,10 @@ jobs:
       - run: npm install
       - snyk/scan:
           severity-threshold: high
-          additional-arguments: --all-projects
+          # additional-arguments: --all-projects
+          additional-arguments: --project-name=juice-shop
           fail-on-issues: false
+          monitor-on-build: true
   build:
     docker:
       - image: 'node:latest'
