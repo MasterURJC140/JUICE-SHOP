@@ -5,6 +5,8 @@ jobs:
     steps:
       - checkout
       - sonarcloud/scan
+      - store_test_results:
+          path: ./reports/
   snykTest:
     docker:
       - image: 'cimg/node:17.8.0'
