@@ -5,6 +5,7 @@ jobs:
     steps:
       - checkout
       - sonarcloud/scan
+      - run: mkdir reports
       - store_test_results:
           path: ./reports/
   snykTest:
